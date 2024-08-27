@@ -1,0 +1,8 @@
+---
+- name: Test playbook for EDA
+  hosts: all
+
+  tasks:
+    - name: Debug
+      ansible.builtin.debug:
+        msg: This is a test
