@@ -1,6 +1,6 @@
 ---
 - name: Test playbook for EDA
-  hosts: all
+  hosts: localhost
 
   tasks:
     - name: Debug
