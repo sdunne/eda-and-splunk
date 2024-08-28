@@ -3,6 +3,10 @@
   hosts: localhost
 
   tasks:
-    - name: Debug
+    - name: Show _hosts
       ansible.builtin.debug:
-        msg: This is a test
+        var: _hosts
+
+    - name: Show eventdata
+      ansible.builtin.debug:
+        var: eventdata

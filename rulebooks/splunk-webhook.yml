@@ -18,12 +18,13 @@
 
   rules:
     - name: Testing Splunk to EDA
-      condition: event.payload is defined
+      condition: event.payload.result._raw contains "Stopped firewalld"
+      # condition: event.payload is defined
       action:
         run_job_template:
           name: Splunk stopped firewalld
           organization: Default
-          # job_args:
-          #   extra_vars:
-          #      eventdata: "{{ event.payload.result }}"
-          #      _hosts: "{{ event.payload.result.host }}"
+          job_args:
+            extra_vars:
+              eventdata: "{{ event.payload.result }}"
+              _hosts: "{{ event.payload.result.host }}"
