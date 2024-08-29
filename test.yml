@@ -9,4 +9,4 @@
 
     - name: Show eventdata
       ansible.builtin.debug:
-        var: eventdata
+        var: eventdata.result._raw

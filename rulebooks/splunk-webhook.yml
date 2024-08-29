@@ -18,7 +18,7 @@
 
   rules:
     - name: Testing Splunk to EDA
-      condition: event.payload.result contains "Stopped firewalld"
+      condition: event.payload.result._raw contains "firewalld"
       # condition: event.payload is defined
       action:
         run_job_template:
